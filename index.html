@@ -7,109 +7,191 @@
   <title>Mortgage Pre-Approval | Black Diamond Holdings</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
+    /* Gradient background for the Hero section */
     .hero-section {
-      background-image: url('https://images.unsplash.com/photo-1521747116042-5b4b0f63f74b'); /* Example image, replace with your own */
+      background: linear-gradient(to right, #8e44ad, #3498db); 
       background-size: cover;
       background-position: center;
+      height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Add Popping Candy animation */
+    @keyframes popCandy {
+      0% {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .pop-animation {
+      animation: popCandy 1s ease-out forwards;
+    }
+
+    .cta-button {
+      background-color: #3498db;
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #2980b9;
     }
 
     .social-icon {
       width: 40px;
       height: 40px;
       margin: 0 10px;
+      transition: transform 0.3s ease;
     }
 
-    .cta-button {
-      background-color: #3498db;
+    .social-icon:hover {
+      transform: scale(1.1);
+    }
+
+    .highlight-card {
+      background-color: #f9f9f9;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .section-title {
+      color: #8e44ad;
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .highlight-section {
+      background-color: #2c3e50;
       color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s ease-in-out;
     }
 
-    .cta-button:hover {
-      background-color: #2980b9;
+    .highlight-section:hover {
+      transform: scale(1.05);
+    }
+
+    /* Contact Section Styling */
+    .get-started-section {
+      background-color: #2d3e50;
+      color: white;
+      padding: 30px;
+      border-radius: 8px;
+      margin-top: 30px;
+      animation: fadeIn 3s ease-out;
+    }
+
+    /* Animation for fading in */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .contact-info {
+      color: #000000;
+    }
+
+    .contact-name {
+      font-weight: bold;
+      color: #000000;
     }
   </style>
 </head>
 
-<body style="background-color: #181818;" class="text-white">
+<body class="bg-gray-50 text-black">
 
   <!-- Hero Section -->
-  <section class="hero-section relative bg-gradient-to-r from-[#9B59B6] to-[#8e44ad] text-white py-24 px-6 text-center">
-    <div class="absolute inset-0 bg-cover bg-center opacity-50" style="background-image: url('https://images.unsplash.com/photo-1521747116042-5b4b0f63f74b');"></div>
-    <div class="relative z-10">
-      <h1 class="text-4xl md:text-5xl font-bold mb-6">Mortgage Pre-Approval</h1>
-      <p class="text-lg md:text-xl max-w-3xl mx-auto">Get one step closer to your dream home! Our mortgage pre-approval process makes it easier to understand your financing options. Let us guide you through the process and ensure a smooth journey to homeownership.</p>
-      <a href="#contact" class="mt-6 inline-block px-6 py-3 bg-white text-[#8e44ad] rounded-lg hover:bg-gray-200 transition cta-button">Contact Us for More Information</a>
+  <section class="hero-section text-white py-24 px-6 text-center">
+    <div class="pop-animation">
+      <h1 class="text-5xl font-bold mb-6">Mortgage Pre-Approval</h1>
+      <p class="text-lg max-w-3xl mx-auto mb-8">Begin your home-buying journey with confidence. Understand your financing options, and get pre-approved to shop for homes within your budget with Black Diamond Holdings.</p>
+      <a href="#pre-approval-info" class="cta-button inline-block">Contact Us for More Information</a>
     </div>
   </section>
 
-  <!-- Mortgage Pre-Approval Benefits Section -->
+  <!-- Educational Content Section -->
   <section class="max-w-6xl mx-auto py-16 px-6 text-center">
-    <h2 class="text-3xl font-semibold mb-6 text-[#9B59B6]">Benefits of Getting Pre-Approved for a Mortgage</h2>
-    <p class="text-gray-700 leading-relaxed max-w-3xl mx-auto mb-10">Our mortgage pre-approval process allows you to confidently shop for your new home, knowing exactly what you can afford. Here are the key benefits:</p>
-
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="p-6 bg-[#8e44ad] rounded-xl shadow-xl hover:shadow-2xl transition">
-        <h3 class="text-2xl font-semibold text-white mb-4">Know Your Budget</h3>
-        <p class="text-gray-200">With a pre-approval, you’ll know your budget, which helps you focus on homes within your price range. No more surprises during negotiations!</p>
-      </div>
-      <div class="p-6 bg-[#9B59B6] rounded-xl shadow-xl hover:shadow-2xl transition">
-        <h3 class="text-2xl font-semibold text-white mb-4">Faster Closing Process</h3>
-        <p class="text-gray-200">Having a pre-approval means your lender has already done much of the work. This speeds up the closing process and helps you move in sooner.</p>
-      </div>
-    </div>
+    <h2 class="section-title pop-animation">What is Mortgage Pre-Approval?</h2>
+    <p class="section-content max-w-3xl mx-auto">Mortgage pre-approval is a process where a lender reviews your financial information and determines how much you can borrow for a home loan. It gives you a clear idea of your budget and makes you a stronger candidate when shopping for a home.</p>
   </section>
 
-  <!-- How It Works Section -->
-  <section class="bg-[#181818] text-white py-16 px-6 text-center">
-    <h2 class="text-3xl font-semibold mb-6 text-[#9B59B6]">How Our Mortgage Pre-Approval Process Works</h2>
-    <p class="text-lg mb-10 text-gray-400">Our streamlined pre-approval process is designed to be simple and efficient, giving you the clarity you need to make informed decisions:</p>
+  <!-- Benefits Section -->
+  <section class="bg-white py-16 px-6 text-center">
+    <h2 class="section-title pop-animation">Why Should You Get Pre-Approved?</h2>
+    <p class="section-content max-w-3xl mx-auto mb-10">Here’s why getting pre-approved for a mortgage is essential in today’s home-buying market:</p>
 
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="p-6 bg-[#8e44ad] rounded-xl shadow-xl hover:shadow-2xl transition">
-        <h3 class="text-2xl font-semibold text-white mb-4">Step 1: Submit Your Application</h3>
-        <p class="text-gray-200">Fill out our online application with your financial details. It’s quick and easy!</p>
+      <div class="highlight-section pop-animation">
+        <h4>Know Your Budget</h4>
+        <p>Pre-approval allows you to understand your borrowing power, so you can focus on homes within your price range.</p>
       </div>
-      <div class="p-6 bg-[#9B59B6] rounded-xl shadow-xl hover:shadow-2xl transition">
-        <h3 class="text-2xl font-semibold text-white mb-4">Step 2: Review & Approval</h3>
-        <p class="text-gray-200">Our experts will review your application and approve your mortgage amount based on your financial history.</p>
+      <div class="highlight-section pop-animation">
+        <h4>Stronger Offer</h4>
+        <p>Being pre-approved shows sellers you are serious and ready to buy, strengthening your offer.</p>
       </div>
-      <div class="p-6 bg-[#8e44ad] rounded-xl shadow-xl hover:shadow-2xl transition">
-        <h3 class="text-2xl font-semibold text-white mb-4">Step 3: Receive Your Pre-Approval</h3>
-        <p class="text-gray-200">Once approved, you will receive your pre-approval letter, empowering you to shop for your new home confidently.</p>
+      <div class="highlight-section pop-animation">
+        <h4>Faster Closing Process</h4>
+        <p>Pre-approval speeds up the loan process, allowing you to close on your new home faster.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step-by-Step Process Section -->
+  <section class="max-w-6xl mx-auto py-16 px-6 text-center">
+    <h2 class="section-title pop-animation">How the Pre-Approval Process Works</h2>
+    <p class="section-content max-w-3xl mx-auto mb-10">Here’s a simple breakdown of how our mortgage pre-approval process works at Black Diamond Holdings:</p>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="highlight-section pop-animation">
+        <h4>Step 1: Submit Your Application</h4>
+        <p>Complete our online mortgage pre-approval application, providing your financial details and documentation.</p>
+      </div>
+      <div class="highlight-section pop-animation">
+        <h4>Step 2: Review & Approval</h4>
+        <p>Our team reviews your application and assesses your financial standing to determine the loan amount you’re eligible for.</p>
+      </div>
+      <div class="highlight-section pop-animation">
+        <h4>Step 3: Receive Pre-Approval</h4>
+        <p>Once approved, we’ll send you a pre-approval letter that shows your maximum loan amount, empowering you to shop with confidence.</p>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="text-center py-16 px-6 bg-[#181818] text-white">
-    <h2 class="text-3xl font-semibold mb-6">Contact Us for More Information</h2>
-    <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-10">To learn more about our mortgage pre-approval process or get started today, contact Michon Blount directly:</p>
-    <p class="text-lg font-bold mb-6">📞 510-343-6160 ext 105</p>
-    <p class="text-lg mb-10">👤 Erin Gardere</p>  
-</section>
-
-  <!-- Social Media Section -->
-  <section class="bg-[#181818] text-white text-center py-16">
-    <h2 class="text-3xl font-semibold mb-6">Follow Us for Updates and More!</h2>
-    <p class="mb-8">Stay updated on the latest listings and educational videos by following us on our social media platforms:</p>
-
-    <div class="flex justify-center space-x-6">
-      <!-- YouTube -->
-      <a href="https://www.youtube.com/@BlackDiamondHoldingsInc" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube" class="social-icon">
-      </a>
-      <!-- TikTok -->
-      <a href="https://www.tiktok.com/@blackdiamondholdingsinc?_t=ZS-90xAVBf8AkO&_r=1" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/TikTok_logo_2018.svg" alt="TikTok" class="social-icon">
-      </a>
-      <!-- Facebook -->
-      <a href="https://facebook.com/Blackdiamondholdings" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="social-icon">
-      </a>
-    </div>
+  <section id="contact" class="get-started-section text-white py-16 px-6 text-center">
+    <h2 class="section-title pop-animation">Get Started with Mortgage Pre-Approval</h2>
+    <p class="section-content max-w-3xl mx-auto mb-10">For more information or to begin your pre-approval process, please contact us directly:</p>
+    <p class="text-lg contact-info">📞 <span class="contact-name">510-343-6160 Ext 106</span></p>
+    <p class="text-lg contact-info mb-10">👤 <span class="contact-name">Michon Blount</span></p>
   </section>
 
   <!-- Footer -->
